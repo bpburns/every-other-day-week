@@ -1,5 +1,5 @@
 # every-other-day-week
-Bash scripts for running routines strictly every other day and strictly every other week
+Bash scripts for running routines strictly every other day and strictly every other week.
 
 # Overview
 I was tasked with writing two cron automations to do some stuff. The requirement was for one of the tasks to be run every other day and the other to be run every other week. Cron provides a way to do something like this with step values (the `/` symbol), but these are not safe around month and year boundaries.
@@ -10,4 +10,4 @@ There is a similar problem for running a task every other week. You could simply
 
 The set of scripts in this repository simply make a deterministic and unambiguous decision about whether, for a given date, the day since the Epoch is an "even" day or an "odd" day, and whether for a given date, the week since the beginning of the Epoch is an "even" week or an "odd" week.
 
-The week starts on Sunday. The week starting for the beginning of the Epoch is week zero. That is, Thursday, January 1st, 1970 is in the week of Sunday, December 28, 1969, which is week zero and is an even week. Thursday, January 1st, 1970 is day zero and is an even day. All other days and weeks around 1970-01-01 are thus unambiguously even or odd, for as many dates as the Linux date utility supports.
+The week starts on Sunday. The week starting for the beginning of the Epoch is week zero. That is, Thursday, January 1st, 1970 is in the week of Sunday, December 28, 1969, which is week zero and is an even week. Thursday, January 1st, 1970 is day zero and is an even day. All other days and weeks around 1970-01-01 are thus unambiguously even or odd, for as many dates as the Linux date utility supports. This also works for days before the Epoch, if you need that for some reason.
